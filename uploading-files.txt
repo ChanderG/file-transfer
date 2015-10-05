@@ -1,0 +1,11 @@
+Run the server. You need (to pip install) web.py.
+
+python file-upload.py
+
+From wherever you want to upload the file:
+curl -F myfile=@<name of file> <server ip>:<server port>/upload --noproxy <server ip>
+ 
+Example:
+curl -F myfile=@./hi.txt 10.117.8.22:8080/upload --noproxy 10.117.8.22
+
+Uploads the file "hi.txt" (from which ever folder this command is run) to the server running at 10.117.8.22:8080. Proxy is disabled while trying to contact this server. Manually, you could go to 10.117.8.22:8080/upload to submit the file via a form.
